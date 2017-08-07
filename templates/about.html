@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Co-occurrence of ingredients and symptoms in adverse event reports</title>
+
+        <link rel="stylesheet" href="{{url_for('static',filename='styles/bokeh_styles.css')}}" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
+        
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+    </head>
+    <body>
+        
+        <div class="wrapper">
+        <div id="themenu" style="position: absolute;">
+            <div id="title">
+                Saving Your Skin
+            </div>
+            <div id="blurb">
+                A tool for understanding the FDA's database of cosmetic adverse event reports and predicting symptoms.
+            </div>
+            <div id="navigation">
+                <div class="mul">
+                        <div class="mli"><a href="{{url_for('index')}}">Home</a></div>
+                        <div class="mli"><a href="{{url_for('correlations')}}">Correlations Between Ingredients and Symptoms</a></div>
+                        <div class="mli"><a href="{{url_for('timeseries')}}">Events Reported Over Time</a></div>
+                        <div class="mli"><a href="{{url_for('predict')}}">Predict Symptoms</a></div>
+                        <div class="mli"><a href="{{url_for('about')}}">About</a></div>
+                </div>            
+            </div>
+        </div>
+
+            <div id="thecontent">
+                <div id="c"> 
+                    <div id="contenttitle">
+                        About This Site
+                    </div>    
+                       <br>
+                    
+                    <div id="caption">
+                        Our data come from the FDA's publicly available database of adverse events for food, dietary supplements and cosmetics. Symptom prediction is based on regularized multilabel logistic regression models.
+                    </div>
+                </div>
+            </div>    
+
+            </div>
+		</div>
+	</body>
+</html>

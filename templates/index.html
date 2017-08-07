@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <title>Co-occurrence of ingredients and symptoms in adverse event reports</title>
 
-        <link rel="stylesheet" href="bokeh_styles.css" type="text/css" />
+        <link rel="stylesheet" href="{{url_for('static',filename='styles/bokeh_styles.css')}}" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
         
         <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
         <script type="text/javascript">
@@ -25,18 +25,25 @@
             </div>
             <div id="navigation">
                 <div class="mul">
-                        <div class="mli"><a href="index.html">Home</a></div>
-                        <div class="mli"><a href="co-occurrence.html">Co-occurrences of Ingredients and Symptoms</a></div>
-                        <div class="mli"><a href="reports_time_series.html">Event Report Time Series</a></div>
-                        <div class="mli"><a href="predict.html">Predict Symptoms</a></div>
-                        <div class="mli"><a href="about.html">About</a></div>
+                        <div class="mli"><a href="{{url_for('index')}}">Home</a></div>
+                        <div class="mli"><a href="{{url_for('correlations')}}">Correlations Between Ingredients and Symptoms</a></div>
+                        <div class="mli"><a href="{{url_for('timeseries')}}">Events Reported Over Time</a></div>
+                        <div class="mli"><a href="{{url_for('predict')}}">Predict Symptoms</a></div>
+                        <div class="mli"><a href="{{url_for('about')}}">About</a></div>
                 </div>            
             </div>
         </div>
 
             <div id="thecontent">
                 <div id="c"> 
-
+                    <div id="contenttitle">
+                        Understanding Cosmetic Adverse Events
+                    </div>    
+                       <br>
+                    
+                    <div id="caption">
+                        The U.S. Food and Drug Administration (FDA) oversees the multi-billion-dollar-per-year cosmetics industry, but it does not regulate products or ingredients before they are sold. This site uses the FDA's database of cosmetic adverse events combined with ingredient information to help consumers understand the links between products, their ingredients, and reported adverse events.
+                    </div>
                 </div>
             </div>    
 
