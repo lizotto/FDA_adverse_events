@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
 import requests
-import pandas as pd
 from bokeh.charts import Line
 from bokeh.embed import file_html,components
 from bokeh.resources import CDN
