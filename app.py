@@ -5,6 +5,7 @@ from bokeh.embed import file_html,components
 from bokeh.resources import CDN
 import dill
 from cleaning import clean_ingredients
+from time_series import load_time_series
 
 app = Flask(__name__)
 
@@ -41,7 +42,8 @@ def prediction():
 
 @app.route('/timeseries')
 def timeseries():
-    return render_template('reports_time_series.html')
+    s, d = load_time_series()
+    return render_template('reports_time_series.html',script=s,div=d)
 
 @app.route('/about')
 def about():
